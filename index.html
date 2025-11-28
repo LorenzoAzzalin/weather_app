@@ -14,7 +14,7 @@
     </script>
     <script type="text/javascript" src="leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js"></script>
     <style>#map { align-items: center; height: 500px; width: 800px;}</style>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" /> -->
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
@@ -23,19 +23,6 @@
 <body>
 <div id="map"></div>
     <script>
-
-    window.addEventListener("load", function() {
-      const sheet = [...document.styleSheets].find(s =>
-          s.href && s.href.includes("Control.Geocoder")
-      );
-      if (!sheet) {
-          console.warn("⚠️ Il CSS del geocoder NON è stato caricato!");
-      } else {
-          console.log("✔️ CSS del geocoder correttamente caricato");
-      }
-    });
-
-
     //Per creare la mappa
         var map = L.map('map').setView([0,0], 1);
         /*L.tileLayer('https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=SqqMN2hTujTCVJBpdgQr', {
@@ -67,7 +54,12 @@
       });
 
       //Barra di ricerca
-      var geocoder = L.Control.geocoder()
+      // Crea il geocoder e forza l'espansione
+      var geocoder = L.Control.geocoder({
+          collapsed: false,          // forza espansione
+          defaultMarkGeocode: true
+      }).addTo(map);
+      geocoder = L.Control.geocoder()
       .on('markgeocode', function(e) {
           var coord = e.geocode.center;
           console.log("Coordinate ricavate dalla ricerca:", coord.lat, coord.lng);

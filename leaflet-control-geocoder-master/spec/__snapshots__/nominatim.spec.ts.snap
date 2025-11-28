@@ -1,0 +1,159 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`L.Control.Geocoder.Nominatim > geocodes Innsbruck 1`] = `
+[
+  [
+    [
+      {
+        "bbox": {
+          "_northEast": {
+            "lat": 47.2808566,
+            "lng": 11.418183,
+          },
+          "_southWest": {
+            "lat": 47.2583715,
+            "lng": 11.3811871,
+          },
+        },
+        "center": {
+          "lat": 47.26951525,
+          "lng": 11.3971372042211,
+        },
+        "html": "<span class=""> Innsbruck   </span><br/><span class="leaflet-control-geocoder-address-context">Tyrol Austria</span>",
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "name": "Innsbruck, Tyrol, Austria",
+        "properties": {
+          "address": {
+            "city": "Innsbruck",
+            "city_district": "Innsbruck",
+            "country": "Austria",
+            "country_code": "at",
+            "county": "Innsbruck",
+            "state": "Tyrol",
+          },
+          "boundingbox": [
+            "47.2583715",
+            "47.2808566",
+            "11.3811871",
+            "11.418183",
+          ],
+          "class": "boundary",
+          "display_name": "Innsbruck, Tyrol, Austria",
+          "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+          "importance": 0.763909048330467,
+          "lat": "47.26951525",
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright",
+          "lon": "11.3971372042211",
+          "osm_id": 8182617,
+          "osm_type": "relation",
+          "place_id": 199282228,
+          "type": "administrative",
+        },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`L.Control.Geocoder.Nominatim > geocodes Innsbruck using a custom htmlTemplate 1`] = `
+[
+  [
+    [
+      {
+        "bbox": {
+          "_northEast": {
+            "lat": 47.2808566,
+            "lng": 11.418183,
+          },
+          "_southWest": {
+            "lat": 47.2583715,
+            "lng": 11.3811871,
+          },
+        },
+        "center": {
+          "lat": 47.26951525,
+          "lng": 11.3971372042211,
+        },
+        "html": "Innsbruck, Tyrol, Austria <a href="https://www.openstreetmap.org/relation/8182617">relation/8182617</a>",
+        "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+        "name": "Innsbruck, Tyrol, Austria",
+        "properties": {
+          "address": {
+            "city": "Innsbruck",
+            "city_district": "Innsbruck",
+            "country": "Austria",
+            "country_code": "at",
+            "county": "Innsbruck",
+            "state": "Tyrol",
+          },
+          "boundingbox": [
+            "47.2583715",
+            "47.2808566",
+            "11.3811871",
+            "11.418183",
+          ],
+          "class": "boundary",
+          "display_name": "Innsbruck, Tyrol, Austria",
+          "icon": "https://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png",
+          "importance": 0.763909048330467,
+          "lat": "47.26951525",
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright",
+          "lon": "11.3971372042211",
+          "osm_id": 8182617,
+          "osm_type": "relation",
+          "place_id": 199282228,
+          "type": "administrative",
+        },
+      },
+    ],
+  ],
+]
+`;
+
+exports[`L.Control.Geocoder.Nominatim > reverse geocodes 47.3/11.3 1`] = `
+[
+  [
+    [
+      {
+        "bbox": {
+          "_northEast": {
+            "lat": 47.2065094,
+            "lng": 11.3836945900354,
+          },
+          "_southWest": {
+            "lat": 47.2065094,
+            "lng": 11.3836945900354,
+          },
+        },
+        "center": {
+          "lat": 47.2065094,
+          "lng": 11.3836945900354,
+        },
+        "html": "<span class="">Tyrol Austria</span>",
+        "name": "Innsbruck-Land, Tyrol, Austria",
+        "properties": {
+          "address": {
+            "country": "Austria",
+            "country_code": "at",
+            "county": "Innsbruck-Land",
+            "state": "Tyrol",
+          },
+          "boundingbox": [
+            "46.9624854",
+            "47.4499229",
+            "10.9896868",
+            "11.7051742",
+          ],
+          "display_name": "Innsbruck-Land, Tyrol, Austria",
+          "lat": "47.2065094",
+          "licence": "Data © OpenStreetMap contributors, ODbL 1.0. https://www.openstreetmap.org/copyright",
+          "lon": "11.3836945900354",
+          "osm_id": 78251,
+          "osm_type": "relation",
+          "place_id": 197718025,
+        },
+      },
+    ],
+  ],
+]
+`;

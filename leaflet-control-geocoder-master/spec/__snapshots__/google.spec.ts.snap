@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`L.Control.Geocoder.Google > geocodes Innsbruck 1`] = `
+[
+  [
+    [
+      {
+        "bbox": {
+          "_northEast": {
+            "lat": 47.3599301,
+            "lng": 11.45593,
+          },
+          "_southWest": {
+            "lat": 47.21098000000001,
+            "lng": 11.3016499,
+          },
+        },
+        "center": {
+          "lat": 47.2692124,
+          "lng": 11.4041024,
+        },
+        "name": "Innsbruck, Austria",
+        "properties": [
+          {
+            "long_name": "Innsbruck",
+            "short_name": "Innsbruck",
+            "types": [
+              "locality",
+              "political",
+            ],
+          },
+          {
+            "long_name": "Innsbruck",
+            "short_name": "Innsbruck",
+            "types": [
+              "administrative_area_level_2",
+              "political",
+            ],
+          },
+          {
+            "long_name": "Tyrol",
+            "short_name": "Tyrol",
+            "types": [
+              "administrative_area_level_1",
+              "political",
+            ],
+          },
+          {
+            "long_name": "Austria",
+            "short_name": "AT",
+            "types": [
+              "country",
+              "political",
+            ],
+          },
+        ],
+      },
+    ],
+  ],
+]
+`;

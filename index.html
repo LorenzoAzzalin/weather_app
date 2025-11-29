@@ -1,71 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Mappa di Lorenzo Azzalin</title>
 <head>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <title>Mappa di Lorenzo Azzalin</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="Leaflet.Coordinates-master/dist/Leaflet.Coordinates-0.1.5.css">
-    <link rel="stylesheet" href="Leaflet.Coordinates-master/dist/Leaflet.Coordinates-0.1.5.ie.css">
     <link rel="stylesheet" href="leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
-    </script>
-    <script type="text/javascript" src="Leaflet.Coordinates-master/dist/Leaflet.Coordinates-0.1.5.src.js">
-    </script>
-    <script type="text/javascript" src="leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js"></script>
-    <style>#map { align-items: center; height: 500px; width: 800px;}</style>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="Leaflet.Coordinates-master/dist/Leaflet.Coordinates-0.1.5.src.js"></script>
+    <script src="leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <script src="funzioni_marittime.js"></script>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        #map { position:absolute; top:0; right:0; bottom:0; left:0; }
+    </style>
 </head>
+
 <body>
 <div id="map"></div>
-    <script>
-    //Per creare la mappa
-        var map = L.map('map').setView([0,0], 1);
-        /*L.tileLayer('https://api.maptiler.com/maps/openstreetmap/{z}/{x}/{y}.jpg?key=SqqMN2hTujTCVJBpdgQr', {
-          attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
-        }).addTo(map);*/
-        L.tileLayer('https://api.maptiler.com/maps/ocean/{z}/{x}/{y}.png?key=SqqMN2hTujTCVJBpdgQr', {
-          attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a> <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a>'
-        }).addTo(map);
-
-      //Coordinate
-      L.control.coordinates({
-        position:"bottomleft",
-        useDMS:true,
-        labelTemplateLat: "Lat {y}",
-        labelTemplateLng: "Long {x}",
-        useLatLngOrder:true
-      }).addTo(map);
-
-      //Per aggiungere un marker sulla mappa
-      map.on("click", function(e) {
-        var marker = new L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-        console.log("Latitudine:" + e.latlng.lat + "\nLongitudine:" + e.latlng.lng);
-      });
-
-      //Geolocalizzazione
-      L.control.locate().addTo(map);
-      map.on('locationfound', function(e) {
-        console.log("Geolocalizzato in:", e.latitude, e.longitude);
-      });
-
-      //Barra di ricerca
-      // Crea il geocoder e forza l'espansione
-      var geocoder = L.Control.geocoder({
-          collapsed: false,          // forza espansione
-          defaultMarkGeocode: true
-      }).addTo(map);
-      geocoder = L.Control.geocoder()
-      .on('markgeocode', function(e) {
-          var coord = e.geocode.center;
-          console.log("Coordinate ricavate dalla ricerca:", coord.lat, coord.lng);
-      })/*.addTo(map)*/;
-
-      //INTRODURRE UNA FUNZIONALITA' PER DETERMINARE SE E' ACQUA O TERRA E IN CASO AGIRE
-    </script>
 </body>
 </html>

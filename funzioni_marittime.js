@@ -153,5 +153,3 @@ async function ottieniNomeOceano_GeoNames(lat, lon, username) {
         return null;
     }
 }
-
-}

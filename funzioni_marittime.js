@@ -136,11 +136,22 @@ function inviaDatiAlJava(lat, lng, data, localita) {
 }
 
 //Funzione per conoscere corpo marino
-async function ottieniNomeOceano_GeoNames(latitudine, longitudine, nomeUtente) {
-  const url = `http://api.geonames.org/oceanJSON?lat=${encodeURIComponent(latitudine)}&lng=${encodeURIComponent(longitudine)}&username=${encodeURIComponent(nomeUtente)}`;
-  const risposta = await fetch(url);
-  if (!risposta.ok) throw new Error('Errore GeoNames: ' + risposta.status);
-  const datiJson = await risposta.json();
-  // datiJson.ocean.name contiene il nome, se presente
-  return datiJson.ocean ? datiJson.ocean.name : null;
+async function ottieniNomeOceano_GeoNames(lat, lon, username) {
+    const url = `https://secure.geonames.org/oceanJSON?lat=${lat}&lng=${lon}&username=${username}`;
+    try {
+        const resp = await fetch(url);
+        if (!resp.ok) throw new Error("Errore nella richiesta GeoNames");
+        const data = await resp.json();
+        console.log("Risposta GeoNames:", data);
+        if (data.ocean && data.ocean.name) {
+            return data.ocean.name;
+        } else {
+            return null;
+        }
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
 }

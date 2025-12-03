@@ -126,10 +126,10 @@ function inviaDatiAlJava(lat, lng, data, localita) {
         ...data,
         localita: localita || null
     };
-    //console.log("MeteoJSON DALLA PARTE CHE STAI TESTANDO: " +  dataConLocalita.latitude);
     const meteoJson = JSON.stringify(dataConLocalita);
+    //console.log("MeteoJSON: " +  meteoJson);
     if (window.AndroidBridge && typeof window.AndroidBridge.riceviDati === "function") {
-        AndroidBridge.riceviDati(lat.toString(), lng.toString(), meteoJSON); //AGGIUNGERE dataConLocalita
+        AndroidBridge.riceviDati(lat.toString(), lng.toString(), meteoJson);
     } else {
         console.log("AndroidBridge non disponibile, probabilmente sei in browser");
     }
